@@ -1,0 +1,158 @@
+.LxBcvPly {
+
+  %scImg_playerAllIcon {
+    background-image: image-url("player/player_allicon.svg");
+    background-repeat: no-repeat;
+  }
+
+  .TxIcon,
+  .TxIcon_before::before {
+    @extend %scImg_playerAllIcon;
+  }
+  .TxIcon_before::before {
+    content: '';
+  }
+
+
+
+  .TxTileOverlay_vidol {
+    background-image: image-url("player/vidol_logo.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+
+  &.vjs-playing .TxIcon_play {
+    &::before {
+      background-position: 0% 60%;
+      //計算值為： background-size: 200% 1100%;
+      background-size: 200% 1084%;
+    }
+  }
+  .TxIcon_play {
+    &::before {
+      background-position: 0% 50%;
+      background-size: 200% 1084%;
+    }
+
+    &.esPause::before {
+      background-position: 0% 60%;
+      background-size: 200% 1084%;
+    }
+  }
+  .TxIcon_touchBrightness {
+    background-position: 0% 90%;
+    background-size: 200% 1084%;
+
+    .TxTouchCtrl_center_adjustR > i {
+      background-position: 100% 90%;
+      background-size: 200% 1084%;
+    }
+  }
+  .TxIcon_touchVoice {
+    background-position: 0% 100%;
+    background-size: 200% 1084%;
+
+    .TxTouchCtrl_center_adjustR > i {
+      background-position: 100% 100%;
+      background-size: 200% 1084%;
+    }
+  }
+  .TxIcon_voice {
+    background-position: 0% 0%;
+    background-size: 200% 1084%;
+
+    .TxBarCtrl_voiceR > i {
+      background-position: 100% 0%;
+      background-size: 200% 1084%;
+    }
+  }
+
+  .TxIcon_live {
+    &::before {
+      background-position: 0% 70%;
+      background-size: 200% 1084%;
+    }
+
+    &.esUpdate::before {
+      background-position: 100% 70%;
+      background-size: 200% 1084%;
+    }
+  }
+  .TxIcon_cyclicView {
+    &::before {
+      background-position: 0% 20%;
+      background-size: 200% 1084%;
+    }
+  }
+
+  .TxIcon_tool {
+    display: none;
+  }
+  .TxIcon_flyMsg {
+    &::before {
+      background-position: 0% 30%;
+      background-size: 200% 1084%;
+    }
+
+    &.esOpen::before {
+      background-position: 100% 30%;
+      background-size: 200% 1084%;
+    }
+  }
+  .TxIcon_caption {
+    display: none;
+  }
+  .TxIcon_collect {
+    &::before {
+      background-position: 0% 40%;
+      background-size: 200% 1084%;
+    }
+
+    &.esHave::before {
+      background-position: 100% 40%;
+      background-size: 200% 1084%;
+    }
+  }
+  .TxIcon_share {
+    display: none;
+  }
+
+  .TxIcon_full {
+    &::before {
+      background-position: 0% 10%;
+      background-size: 200% 1084%;
+    }
+  }
+  &.vjs-fullscreen .TxIcon_full {
+    &::before {
+      background-position: 100% 10%;
+      background-size: 200% 1084%;
+    }
+  }
+
+  .TxIcon_X {
+    &::before {
+      background-position: 100% 80%;
+      background-size: 200% 1084%;
+    }
+  }
+
+  .TxIcon_episode {
+    display: none;
+  }
+
+  .TxIcon_ShareFB {
+  }
+  .TxIcon_ShareTwitter {
+  }
+  .TxIcon_ShareSina {
+  }
+  .TxIcon_ShareWeibo {
+  }
+  .TxIcon_ShareLine {
+  }
+  .TxIcon_ShareWechat {
+  }
+}
+

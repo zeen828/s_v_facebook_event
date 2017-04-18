@@ -1,0 +1,321 @@
+<!DOCTYPE HTML><html>
+<head>
+
+    <meta charset="utf-8">
+    <title>播放器</title>
+
+    <link rel="stylesheet" href="stylesheet/bcvPly_main.css" />
+    <link rel="stylesheet" href="stylesheet/bcvPly_custom_showlayout.css" />
+    <link rel="stylesheet" href="stylesheet/bcvPly_icon.css" />
+
+</head>
+<body>
+
+    <style>
+        body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+
+    <video id="setPlyMain" class="video-js LxBcvPly"
+        data-account="4338955585001"
+        data-video-id=""
+        data-player="VJxyQW4m0e"
+        data-embed="default">
+    </video>
+
+    <div id="LxBcvPly_wrap" style="display: none">
+
+        <!-- 畫面 -->
+
+        <div class="TxCustPly"></div>
+
+        <div class="TxVideoSubstitute"></div>
+
+        <div class="TxTileOverlay">
+            <i class="TxTileOverlay_vidol"></i>
+            <div class="TxTileOverlay_watching">
+                <div class="TxTileOverlay_watching_live">
+                    <span>直播</span>
+                </div>
+                <div class="TxTileOverlay_watching_num">
+                    <span>0</span>
+                </div>
+            </div>
+            <div class="TxTileOverlay_flyMsg">
+                <div class="TxTileOverlay_flyMsg_show"></div>
+            </div>
+            <div class="TxTileOverlay_background">
+                <b class="TxTileOverlay_background_top"></b>
+                <b class="TxTileOverlay_background_bottom"></b>
+            </div>
+            <div class="TxTileOverlay_brightnessForTouch"></div>
+        </div>
+
+        <div class="TxBillboard">
+            <div class="TxBillboard_dfpBanner">
+                <div class="TxBillboard_dfpBanner_default"></div>
+                <div id="TxBillboard_dfpBanner_content" class="TxBillboard_dfpBanner_content"></div>
+                <b class="TxBillboard_dfpBanner_close"></b>
+            </div>
+        </div>
+
+        <div class="TxPlyerTimeLine">
+            <div class="TxPlyerTimeLine_floatShow">00:00</div>
+            <div class="TxPlyerTimeLine_buffer"></div>
+            <div class="TxPlyerTimeLine_play">
+                <b></b>
+            </div>
+            <div class="TxPlyerTimeLine_part"></div>
+        </div>
+
+        <div class="TxTouchCtrl">
+            <div class="TxTouchCtrl_left"></div>
+            <div class="TxTouchCtrl_center">
+                <i class="TxIcon_before TxIcon_play"></i>
+                <div class="TxTouchCtrl_center_adjust TxIcon">
+                    <div class="TxTouchCtrl_center_adjustR">
+                        <i class="TxIcon_adjustR TxIcon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="TxTouchCtrl_right"></div>
+            <div class="TxTouchCtrl_infoState">
+                <i class="TxIcon_before TxIcon_live"></i>
+            </div>
+            <div class="TxTouchCtrl_topToolBar">
+                <i class="TxIcon TxIcon_episode"></i>
+            </div>
+            <div class="TxTouchCtrl_toolBar">
+                <i class="TxIcon_before TxIcon_flyMsg"></i>
+                <i class="TxIcon_before TxIcon_cyclicView"></i>
+                <i class="TxIcon TxIcon_caption"></i>
+                <i class="TxIcon_before TxIcon_collect"></i>
+                <i class="TxIcon_before TxIcon_full"></i>
+            </div>
+            <div class="TxTouchCtrl_timeLine"></div>
+        </div>
+
+        <div class="TxBarCtrl">
+            <i class="TxIcon_play TxIcon_before"></i>
+            <div class="TxBarCtrl_time">
+                <span class="TxBarCtrl_time_current">00:00</span>
+                <span class="TxBarCtrl_time_duration">00:00</span>
+            </div>
+            <b class="TxBarCtrl_space"></b>
+            <div class="TxBarCtrl_voice">
+                <div class="TxIcon_voice TxIcon" data-title="音量">
+                    <div class="TxBarCtrl_voiceR">
+                        <i class="TxIcon_voiceR TxIcon"></i>
+                    </div>
+                </div>
+                <div class="TxBarCtrl_voice_drawBar">
+                    <div>
+                        <b></b>
+                    </div>
+                </div>
+            </div>
+            <i class="TxIcon_live TxIcon_before" data-title="直播"></i>
+            <i class="TxIcon_cyclicView TxIcon_before" data-title="360° 影片"></i>
+            <i class="TxIcon_flyMsg TxIcon_before" data-title="彈幕"></i>
+            <i class="TxIcon_caption TxIcon_before" data-title="字幕"></i>
+            <i class="TxIcon_collect TxIcon_before" data-title="收藏"></i>
+            <i class="TxIcon_full TxIcon_before" data-title="全螢幕"></i>
+        </div>
+
+        <div class="TxTopBar">
+            <div class="TxTopBar_title">
+                <span><%= @player_title %></span>
+            </div>
+            <div class="TxTopBar_otherBtnList">
+                <i class="TxIcon_tool TxIcon_before"></i>
+                <i class="TxIcon_episode TxIcon_before" data-title="劇集"></i>
+            </div>
+        </div>
+
+        <div class="TxCtrlToolBar">
+            <i class="TxIcon_flyMsg TxIcon_before" data-title="彈幕"></i>
+            <i class="TxIcon_caption TxIcon_before" data-title="字幕"></i>
+            <i class="TxIcon_collect TxIcon_before" data-title="收藏"></i>
+            <i class="TxIcon_share TxIcon_before" data-title="分享影片"></i>
+        </div>
+
+
+        <!-- 框框 -->
+
+        <div class="TxFloatBlock"></div>
+
+        <div class="TxForceBlock"></div>
+
+        <div class="TxForceBlock_error">
+            <div class="TxForceBlock_error_title">錯誤訊息</div>
+            <b class="TxForceBlock_error_close TxIcon_X TxIcon_before"></b>
+            <div class="TxForceBlock_error_content"></div>
+        </div>
+
+        <div class="TxForceBlock_warn">
+            <div class="TxForceBlock_warn_title"></div>
+            <div class="TxForceBlock_warn_content"></div>
+        </div>
+
+        <div class="TxForceBlock_showInf">
+            <div class="TxForceBlock_showInf_title"></div>
+            <b class="TxForceBlock_showInf_close TxIcon_X TxIcon_before"></b>
+            <div class="TxForceBlock_showInf_content"></div>
+        </div>
+
+        <div class="TxForceBlock_interact"></div>
+
+
+        <!-- 內容 -->
+
+        <div class="TxInform_unLogin" data-title="">
+            <div>
+                <span><%= t("device.un_login") %></span>
+                <button><%= t("device.un_login_goto") %></button>
+            </div>
+        </div>
+
+        <div class="TxInform_emailUnValidate" data-title="">
+            <%= t("device.email_validate") %>
+        </div>
+
+        <div class="TxInform_catchPlayRight" data-title="">
+            <div>
+                <p><%= t("device.current_watch") %></p>
+                <button><%= t("device.get_device") %></button>
+            </div>
+        </div>
+
+        <div class="TxInform_unBuyValidate" data-title="Vidol 與明星零距離">
+            <ul></ul>
+            <div>此影片為付費影片</div>
+        </div>
+
+        <div class="TxInform_recommendUseApp" data-title="">
+            <div>
+                <p>完整體驗請使用 Vidol APP</p>
+                <button>立即前往應用程式</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="//players.brightcove.net/4338955585001/VJxyQW4m0e_default/index.min.js"></script>
+    <script src="javascript/bcvPly_plugin.js"></script>
+    <script src="javascript/naviVerify.js"></script>
+    <script src="javascript/onMultiMouse.js"></script>
+    <script src="javascript/createPlyerTimeLine.js"></script>
+    <script src="javascript/jquery-1.11.3.js"></script>
+    <script src="javascript/jquery.danmu.min.js"></script>
+    <script src="javascript/bcvPly.js"></script>
+    <script src="javascript/bcvPly_custom.js"></script>
+    <script>
+        bcvPlyInitInf(function(){
+            function jErrMsgSprintf( jCode, txtMsg ){
+                return 'code： ' + jCode + '<br />' + txtMsg;
+            }
+
+            return {
+                bcvErr: {
+                    unknown: {
+                        //[ isRebuild, isSetVideo ] || false
+                        /* isSetVideo = false 此參數暫無法使用
+                            流程：
+                                1. 影片重載時清空畫面
+                                2. 選擇重建 則需等到重建完才會彈出錯誤訊息
+                            因此 錯誤訊息 彈出後即被 清空畫面 給抹掉了
+                            目前在第一次觸發播放有事件會打 API 來取得影片
+                            暫時作為妥協方案
+                            *注 第一次觸發撥放事件原先是做給以無 VedioID 載入的撥放器狀態
+                        -*/
+                        action: false,
+                        msg: '未知',
+                    },
+                    abnormalUsing: {
+                        action: [ true, false ],
+                        msg: '異常執行',
+                    },
+                    accessDenied: {
+                        action: false,
+                        msg: jErrMsgSprintf( '#1', '影片無法在此地區播放' ),
+                    },
+                    notFoundSrc: {
+                        action: false,
+                        msg: jErrMsgSprintf( '-101', '影片不存在或已被下架' ),
+                    },
+                    notPlayAble: {
+                        action: false,
+                        msg: jErrMsgSprintf( '-102', '未知' ),
+                    },
+                    'errCode_-2': {
+                        action: [ true, false ],
+                        msg: jErrMsgSprintf( '-2', '無法下載此影片' ),
+                    },
+                    'errCode_-1': {
+                        action: [ true, false ],
+                        msg: jErrMsgSprintf( '-1', '無影片被載入' ),
+                    },
+                    errCode_1: {
+                        action: false,
+                        msg: jErrMsgSprintf( '1', '影片下載中斷' ),
+                    },
+                    errCode_2: {
+                        action: [ true, false ],
+                        msg: jErrMsgSprintf( '2', '連線中斷，請確認網路連線狀態。' ),
+                    },
+                    errCode_3: {
+                        action: false,
+                        msg: jErrMsgSprintf( '3', '影片毀損或瀏覽器無法撥放此格式。' ),
+                    },
+                    errCode_4: {
+                        action: false,
+                        msg: jErrMsgSprintf( '4', '影片無法被取得或瀏覽器不支援。' ),
+                    },
+                    errCode_5: {
+                        action: false,
+                        msg: jErrMsgSprintf( '5', '無影片被載入。' ),
+                    },
+                },
+                informList: {
+                    share: [ 'blockShowInf', 'share' ],
+                    unLogin: [ 'blockWarn', 'unLogin' ],
+                    emailUnValidate: [ 'blockWarn', 'emailUnValidate' ],
+                    catchPlayRight: [ 'blockWarn', 'catchPlayRight' ],
+                    unBuyValidate: [ 'blockWarn', 'unBuyValidate' ],
+                    recommendUseApp: [ 'blockShowInf', 'recommendUseApp' ],
+                },
+            };
+        }());
+
+        var gon = {
+                "ad_switch": true,
+                "item_type": "episode",
+                "item_id": "14499",
+                "custom_player": {
+                    "player": "normal",
+                    "url": ""
+                },
+            };
+
+        var jSETPly = new bcvPlyInit( 'setPlyMain', {
+                account: '4338955585001',
+                videoID: '',
+                player: 'VJxyQW4m0e',
+                embed: 'default',
+            } );
+
+        // 彈幕需求 必須在 document 下才可正確執行
+        setPlyPlugin( jSETPly );
+
+        jSETPly.v.ready(function(){
+            window.chmiz_Ply = new mixtureOutBcvPly( jSETPly );
+        });
+    </script>
+
+
+</body></html>

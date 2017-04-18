@@ -1,0 +1,652 @@
+$mainColor1 : #e9e93b; /*CI黃*/
+$mainColor2 : #472fff; /*CI藍*/
+$mainColor3 : #f6b335; /*橘*/
+$mainColor4 : #000000; /*黑*/
+
+$header_bg_color    : #f36; /* 頁頭底色 */
+$logo_bg_color      : #394c9f;/* LOGO底色 */
+$nav_bg_color       : ; /* 選單底色 */
+$nav_font_color     : #fff; /* 選單底色 */
+
+$maxWidth : 1280px; /* 最大寬度 */
+
+$header-pc      : 0px;
+$header-pad     : 0px;
+$header-mobile  : 0px;
+$content-pc     : 0px;
+$content-pad    : 0px;
+$content-mobile : 0px;
+$footer-pc      : 0px;
+$footer-pad     : 0px;
+$footer-mobile  : 0px;
+
+$content_bgcolor        : #fff; /* 敘述區塊底色 */
+$content_padding_pc     : 10px;
+$content_padding_pad    : 5px;
+$content_padding_mobile : 0px;
+
+@mixin radius1($radius){
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin shadow1($shadow){
+  -webkit-box-shadow:$shadow;
+     -moz-box-shadow:$shadow;
+          box-shadow:$shadow;
+}
+@mixin size1($size){
+  background-size: $size;
+}
+@mixin transition($action){
+  -webkit-transition: $action;
+     -moz-transition: $action;
+       -o-transition: $action;
+          transition: $action;
+}
+@mixin transform($val){
+  -webkit-transform:scale($val);
+     -moz-transform:scale($val);
+      -ms-transform:scale($val);
+       -o-transform:scale($val);
+          transform:scale($val);
+}
+.bgColor_3a4ca0{background-color: #3a4ca0;}
+.bg_share{
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+.cheangText{
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  -o-text-overflow:ellipsis;
+  overflow:hidden;
+}
+.videoTitleColor{
+  color:#f6b335;
+}
+
+ul{
+  list-style-type: none;
+}
+
+input,button{
+  -webkit-appearance:none;
+  @include radius1(0px);
+}
+
+* {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-user-select: auto;
+    -webkit-user-select: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+  font: 100% "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #f8f1eb;
+}
+iframe,video{
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+@import 'sharesass/list.scss';
+@import 'sharesass/message.scss';
+@import 'sharesass/sunscroll.scss';
+
+.loading{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 101;
+  top: 0px;
+  left: 0px;
+  background-color: $mainColor2;
+  background-image: url(../images/loading.gif);
+  @include size1(100px);
+  @extend .bg_share;
+}
+
+#wrapper{
+  overflow: hidden;
+  .bannerAll{
+    width: 100%;
+    background-color: #ccc;
+    >.bannerUl{
+      width: 100%;
+      >li{
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+      }
+    }
+  }
+  >header{
+    width: 100%;
+    float: left;
+    background-color: $header_bg_color;
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    left: 0px;
+    >.in{
+      width: 100%;
+      max-width: $maxWidth;
+      margin:auto;
+      #logo{
+        background-color: $logo_bg_color;
+        display: inline-block;
+        @include size1(auto 80%);
+        @extend .bg_share;
+        >a{
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+        &.center{
+          float  : none !important;
+          margin : auto;
+          display: block !important;
+        }
+      }
+      >nav{
+        display: inline-block;
+        background-color: $nav_bg_color;
+      }
+    }
+    &.pc{
+      >.in{
+        padding:$header-pc;
+        #logo,nav{
+          height: 50px;
+        }
+        #logo{
+          width: 20%;
+          min-width: 120px;
+          float: left;
+        }
+        >nav{
+          width: 80%;
+          float: right;
+        }
+      }
+    }
+    &.pad{
+      >.in{
+        padding:$header-pc;
+        #logo,nav{
+          height: 50px;
+        }
+        #logo{
+          width: 20%;
+          min-width: 120px;
+          float: left;
+        }
+        >nav{
+          width: 80%;
+          float: right;
+        }
+      }
+    }
+    &.mobile{
+      >.in{
+        padding:$header-pc;
+        #logo,nav{
+          height: 40px;
+        }
+        #logo{
+          width: 30%;
+          float: left;
+        }
+        >nav{
+          width: 70%;
+          float: right;
+          .horizontalScroll>.sunScroll-wrap>.sunScroll-move>ul>li{
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  $content-pc-top-width         : 100%;
+  $content-pc-left-width        : 0%;
+  $content-pc-center-width      : 70%;
+  $content-pc-right-width       : 30%;
+  $content-pc-bottom-width      : 100%;
+
+  $content-pad-top-width        : 100%;
+  $content-pad-left-width       : 0%;
+  $content-pad-center-width     : 60%;
+  $content-pad-right-width      : 40%;
+  $content-pad-bottom-width     : 100%;
+
+  $content-mobile-top-width     : 100%;
+  $content-mobile-left-width    : 100%;
+  $content-mobile-center-width  : 100%;
+  $content-mobile-right-width   : 100%;
+  $content-mobile-bottom-width  : 100%;
+
+  >.content{
+    >.in{
+      width: 100%;
+      max-width: $maxWidth;
+      margin:auto;
+      >.top{
+        float: left;
+        >a{
+          width: 100%;
+          float: left;
+          display: block;
+        }
+        img.mainImg{
+          width: 100%;
+          float: left;
+        }
+      }
+      >.left{
+        float: left;
+        background-color:$content_bgcolor;
+      }
+      >.center{
+        float: left;
+        background-color:$content_bgcolor;
+        >.top{
+          width: 100%;
+          float: left;
+        }
+        >.con{
+          width: 100%;
+          float:left;
+
+          >p{
+            line-height: 1.5em;
+          }
+        }
+      }
+      >.right{
+        float: right;
+        position: relative;
+        background-color:$content_bgcolor;
+        .memberOnline{
+          width: 100%;
+          float: left;
+          background-color: #f36;
+          position: absolute;
+          z-index: 10;
+          top: 0px;
+          left: 0px;
+          .label,.count{
+            display: inline-block;
+            color: #fff;
+          }
+          .login{
+            background-color: #3c56a1;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            color:#fff;
+            text-decoration: none;
+          }
+          .fb-login-button,#fb-root{
+            display: inline-block;
+          }
+        }
+        #input_messages{
+          width: 100%;
+          float: left;
+          padding:0px 10px;
+          background-color: #000;
+          color: #fff;
+          border: none;
+          border-top: 1px solid #555;
+          position: absolute;
+          z-index: 10;
+          bottom: 0px;
+          left: 0px;
+        }
+        .submit{
+          float: left;
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+          z-index: 10;
+          font-size: 1em;
+          border: none;
+          background-color: $mainColor2;
+          color: #fff;
+        }
+        >.in{
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
+      }
+      >.bottom{
+        float: left;
+        clear: both;
+        background-color:$content_bgcolor;
+      }
+    }
+    &.pc{
+      padding-top: 50px;
+      >.in{
+        .label,.count{
+          padding-top:5px;
+          font-size: 1.2em;
+        }
+        >.top,>.left,>.center,>.right,>.bottom{
+          min-height: 70px;
+        }
+        >.left,>.center,>.right,>.bottom{
+          padding: $content_padding_pc;
+        }
+        padding:$content-pc;
+        >.top{
+          width: $content-pc-top-width;
+        }
+        >.left{
+          width: $content-pc-left-width;
+          padding-right: 0px;
+        }
+        >.center{
+          width: $content-pc-center-width;
+          padding-right: 0px;
+          >.con{
+            padding-right: $content_padding_pc;
+            >.bannerAll{
+              margin-top: $content_padding_pc;
+            }
+            >h2{
+              font-size: 1.6em;
+              margin: 10px 0px;
+            }
+            >p{
+              font-size: 1em;
+            }
+          }
+        }
+        >.right{
+          width: $content-pc-right-width;
+          padding-left: 0px;
+          .memberOnline{
+            height: 62px;
+            padding:5px 10px;
+            .label{
+              clear: both;
+            }
+            .label,.count{
+              margin-right: 5px;
+              padding: 5px 0px;
+              font-size: 0.9em;
+              float: left;
+            }
+            .login{
+              width: 100px;
+              height: 62px;
+              padding-top: 22px;
+              text-align: center;
+            }
+            .fb-login-button,#fb-root{
+              width: 100px;
+              height: 62px;
+              display: inline-block;
+              position: absolute;
+              top: 0px;
+              right: 0px;
+              background-color: #3b55a0;
+              padding-top: 20px;
+              padding-left: 16px;
+            }
+            .fb_iframe_widget_fluid{
+              float: left;
+            }
+            .fb_iframe_widget {
+              float: left;
+            }
+          }
+          #input_messages{
+            height: 35px;
+            font-size: 1em;
+          }
+          .submit{
+            width: 60px;
+            height: 35px;
+          }
+          >.in{
+            padding-top: 62px;
+            padding-bottom: 35px;
+          }
+        }
+        >.bottom{
+          padding-top: 0px;
+          width: $content-pc-bottom-width;
+        }
+      }
+    }
+    &.pad{
+      padding-top: 50px;
+      >.in{
+        .label,.count{
+          padding-top:5px;
+          font-size: 1.2em;
+        }
+        >.top,>.left,>.center,>.right,>.bottom{
+          min-height: 100px;
+        }
+        >.left,>.center,>.right,>.bottom{
+          padding: $content_padding_pad;
+        }
+        padding:$content-pc;
+        >.top{
+          width: $content-pad-top-width;
+        }
+        >.left{
+          width: $content-pad-left-width;
+          padding-right: 0px;
+        }
+        >.center{
+          width: $content-pad-center-width;
+          padding-right: 0px;
+          >.con{
+            padding-right: $content_padding_pad;
+            >.bannerAll{
+              margin-top: $content_padding_pad;
+            }
+            >h2{
+              font-size: 1.4em;
+              margin: 10px 0px;
+            }
+            >p{
+              font-size: 0.9em;
+            }
+          }
+        }
+        >.right{
+          width: $content-pad-right-width;
+          padding-left: 0px;
+          .memberOnline{
+            height: 62px;
+            padding:5px 10px;
+            .label{
+              clear: both;
+            }
+            .label,.count{
+              margin-right: 5px;
+              padding: 5px 0px;
+              font-size: 0.9em;
+              float: left;
+            }
+            .login{
+              width: 90px;
+              height: 62px;
+              padding-top: 22px;
+              text-align: center;
+            }
+            .fb-login-button,#fb-root{
+              height: 62px;
+              padding: 20px 10px 0px 10px;
+              background-color: #3c56a1;
+              display: inline-block;
+              position: absolute;
+              top: 0px;
+              right: 0px;
+            }
+            .fb_iframe_widget_fluid{
+              float: left;
+            }
+            .fb_iframe_widget {
+              float: left;
+            }
+          }
+          #input_messages{
+            height: 35px;
+            font-size: 1em;
+          }
+          .submit{
+            width: 60px;
+            height: 35px;
+          }
+          >.in{
+            padding-top: 62px;
+            padding-bottom: 35px;
+          }
+        }
+        >.bottom{
+          padding-top: 0px;
+          width: $content-pad-bottom-width;
+        }
+      }
+    }
+    &.mobile{
+      height: 100vh;
+      padding-top: 40px;
+      padding-bottom: 5px;
+      &.haveNav{
+        padding-top: 40px !important;
+      }
+      >.in{
+        .label,.count{
+          padding-top:5px;
+          font-size: 1.2em;
+        }
+        .login{
+          width: 90px;
+          height: 35px;
+          padding-top: 8px;
+          text-align: center;
+        }
+        >.top,>.left,>.center,>.right,>.bottom{
+          min-height: 70px;
+        }
+        >.left,>.center,>.right,>.bottom{
+          padding: $content_padding_mobile;
+        }
+        padding:$content-pc;
+        >.top{
+          width: $content-mobile-top-width;
+        }
+        >.left{
+          width: $content-mobile-left-width;
+          padding-right: 0px;
+        }
+        >.center{
+          width: $content-mobile-center-width;
+          padding-bottom: 0px;
+          >.con{
+            padding-right: $content_padding_pc;
+            >.bannerAll{
+              position: fixed;
+              z-index: 90;
+              bottom: 0px;
+              left: 0px;
+            }
+            >h2,h3,h4,p{
+              display: none;
+            }
+          }
+        }
+        >.right{
+          width: $content-mobile-right-width;
+          min-height: 300px;
+          padding-top: 0px;
+          .memberOnline{
+            height: 35px;
+            padding:6px 10px;
+            .label,.count{
+              margin-right: 5px;
+              margin-left: 5px;
+              font-size: 0.9em;
+              clear: none;
+            }
+            .count{
+              margin: 0px;
+            }
+            .fb-login-button,#fb-root{
+              width: 90px;
+              display: inline-block;
+              position: absolute;
+              top: 0px;
+              right: 0px;
+              background-color: #3b55a0;
+              height: 35px;
+              padding-top: 6px;
+              padding-left: 19px;
+            }
+          }
+          #input_messages{
+            height: 40px;
+            font-size: 1em;
+          }
+          .submit{
+            width: 60px;
+            height: 40px;
+          }
+          >.in{
+            padding-top: 35px;
+            padding-bottom: 40px;
+          }
+        }
+        >.bottom{
+          padding-top: 0px;
+          width: $content-pc-bottom-width;
+        }
+      }
+    }
+  }
+  >footer{
+    >.in{
+      width: 100%;
+      max-width: $maxWidth;
+      margin:auto;
+      img{
+        width: 100%;
+      }
+    }
+    &.pc{
+      >.in{
+        padding:$footer-pc;
+      }
+    }
+    &.pad{
+      >.in{
+        padding:$footer-pad;
+      }
+    }
+    &.mobile{
+      >.in{
+        padding:$footer-mobile;
+      }
+      margin-bottom: 60px;
+    }
+  }
+}

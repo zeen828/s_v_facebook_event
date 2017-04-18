@@ -1,0 +1,75 @@
+* {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  margin: 0px;
+  padding: 0px;
+  -webkit-appearance:none;
+}
+body {
+  background: #ececec;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul{
+  list-style-type: none;
+}
+
+.block{
+  width: 100%;
+  max-width: 300px;
+  float: left;
+  position: relative;
+  top: 30px;
+  left: 50%;
+  margin-left: -150px;
+  border:1px solid #ccc;
+  background-color: #fff;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.block ul{
+  width: 100%;
+  float: left;
+}
+.block ul>li{
+  width: 100%;
+  float: left;
+  padding:5px 10px;
+  text-align: center;
+}
+.block ul li>label{
+  width: 100%;
+  float: left;
+  padding:10px 0px;
+  color: #394c9f;
+}
+.block ul li>input[type="text"],.block ul li>input[type="password"]{
+  width: 100%;
+  height: 40px;
+  float: left;
+  text-align: center;
+  padding:0px 10px;
+  border:1px solid #aaa;
+}
+.block ul li>button[type="submit"]{
+  width: 100%;
+  height: 40px;
+  float: left;
+  margin-bottom: 5px;
+  background-color: #f36;
+  border:none;
+  color: #fff;
+}
+.block ul li>input[type="text"],.block ul li>input[type="password"],.block ul li>button[type="submit"]{
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}

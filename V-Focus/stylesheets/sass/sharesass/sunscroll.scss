@@ -1,0 +1,174 @@
+*{
+  -webkit-text-size-adjust : none;
+          text-size-adjust : none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -moz-user-select : auto;
+  -webkit-user-select: auto;
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  font-family: -apple-system, "Helvetica Neue", "Lucida Grande",Microsoft JhengHe, Arial, sans-serif, "微軟正黑體";
+  font-size:100%;
+  overflow-x:hidden;
+  -webkit-overflow-scrolling: auto;
+}
+
+#nav{
+  width: 100%;
+  height: 100%;
+  float: left;
+  background-color: #333;
+}
+  #nav .in{
+    width: 100%;
+    float: left;
+    position: relative;
+  }
+
+.sunScroll-wrap{
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.sunScroll-wrap>.sunScroll-move{
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.sunScroll-wrap>.scrollBar{
+  width: 9px;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  right: 0px;
+  background-color: rgba(71,47,255,0.6);
+  background-image: url(../images/upIcon.svg),url(../images/downIcon.svg);
+  background-repeat: no-repeat;
+  background-size: 80% auto;
+  background-position: center top, center bottom;
+  display: none;
+}
+.sunScroll-wrap>.scrollBar>.scrollBar-move{
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding : 15px 1px;
+}
+
+.sunScroll-wrap>.scrollBar>.scrollBar-move>.style{
+  width: 100%;
+  height: 100%;
+  background-color: #F2F41C;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+}
+
+
+
+.horizontalScroll{
+  width: 100%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.horizontalScroll .notShow{
+  display: none !important;
+}
+.horizontalScroll>.horizontalBtn{
+  width: 40px;
+  height: 100%;
+  background-color: #f36;
+  position: absolute;
+  z-index: 2;
+  top: 0%;
+  opacity: 0.5;
+}
+.horizontalScroll>.horizontalBtn:hover{
+  opacity: 1;
+}
+.horizontalScroll>.pver{
+  left: 0px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0.01+100 */
+  background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,0.01) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.01) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.01) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#03000000',GradientType=1 ); /* IE6-9 */
+}
+.horizontalScroll>.next{
+  right: 0px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.01+0,1+100 */
+  background: -moz-linear-gradient(left,  rgba(0,0,0,0.01) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  rgba(0,0,0,0.01) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  rgba(0,0,0,0.01) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+}
+.horizontalScroll>.sunScroll-wrap{
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+.horizontalScroll>.sunScroll-wrap>.sunScroll-move{
+  height: 100%;
+  float: left;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: left 1s;
+  -moz-transition: left 1s;
+  -webkit-transition: left 1s;
+  -o-transition: left 1s;
+}
+.horizontalScroll>.sunScroll-wrap>.sunScroll-move>ul{
+  height: 100%;
+  float: left;
+}
+.horizontalScroll>.sunScroll-wrap>.sunScroll-move>ul>li{
+  height: 100%;
+  float: left;
+  padding: 15px 20px;
+  font-size: 1.1em;
+  >a{
+    text-decoration: none;
+    color:$nav_font_color;
+  }
+}
+.horizontalScroll>.sunScroll-wrap>.scrollBar{
+  display: none;
+  width: 100%;
+  height: 7px;
+  background-color: rgba(0,0,0,.4);
+  position: absolute;
+  top: auto;
+  bottom: 0px;
+  left:0px;
+}
+.horizontalScroll>.sunScroll-wrap>.scrollBar>.scrollBar-move{
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  padding:1px 1px;
+  position: absolute;
+  transition: left 1s;
+  -moz-transition: left 1s;
+  -webkit-transition: left 1s;
+  -o-transition: left 1s;
+}
+.horizontalScroll>.sunScroll-wrap>.scrollBar>.scrollBar-move>.style{
+  width: 100%;
+  height: 100%;
+  background-color: #F2F41C;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+}

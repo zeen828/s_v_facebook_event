@@ -1,0 +1,119 @@
+<% content_for :page_specific_stylesheets do %>
+  <%= stylesheet_link_tag "player/bcvPly_main", "player/bcvPly_custom_showlayout", "player/bcvPly_icon", media: "all" %>
+<% end %>
+
+<%= render partial: "shared/player/custom_player", locals: { player_id: player_id } %>
+
+<video id="<%= player_id %>" class="video-js LxBcvPly"
+    data-account="<%= Settings.BrightCove.Account_ID %>"
+    data-video-id="<%= video_id %>"
+    data-player="<%= Settings.BrightCove.Player_ID %>"
+    data-embed="default">
+</video>
+
+<% content_for :page_specific_javascripts do %>
+  <%= javascript_include_tag "//players.brightcove.net/#{Settings.BrightCove.Account_ID}/#{Settings.BrightCove.Player_ID}_default/index.min.js",
+                             "player/bcvPly_plugin",
+                             "player/naviVerify",
+                             "player/onMultiMouse",
+                             "player/createPlyerTimeLine",
+                             # "player/jquery-1.11.3", # 似乎必須此版本
+                             "player/jquery.danmu.min",
+                             "player/bcvPly",
+                             "player/bcvPly_custom" %>
+  <%= javascript_tag do %>
+    bcvPlyInitInf(function(){
+        function jErrMsgSprintf( jCode, txtMsg ){
+            return '編號： ' + jCode + '<br />' + txtMsg;
+        }
+
+        return {
+            bcvErr: {
+                unknown: {
+                    //[ isRebuild, isSetVideo ] || false
+                    /* isSetVideo = false 此參數暫無法使用
+                        流程：
+                            1. 影片重載時清空畫面
+                            2. 選擇重建 則需等到重建完才會彈出錯誤訊息
+                        因此 錯誤訊息 彈出後即被 清空畫面 給抹掉了
+                        目前在第一次觸發播放有事件會打 API 來取得影片
+                        暫時作為妥協方案
+                        *注 第一次觸發撥放事件原先是做給以無 VedioID 載入的撥放器狀態
+                    -*/
+                    action: false,
+                    msg: '<%= t("bcvErr.unknown") %>',
+                },
+                abnormalUsing: {
+                    action: [ true, false ],
+                    msg: '<%= t("bcvErr.abnormalUsing") %>',
+                },
+                accessDenied: {
+                    action: false,
+                    msg: jErrMsgSprintf( '#1', '<%= t("bcvErr.accessDenied") %>' ),
+                },
+                notFoundSrc: {
+                    action: false,
+                    msg: jErrMsgSprintf( '-101', '<%= t("bcvErr.VIDEO_NOT_FOUND") %>' ),
+                },
+                notPlayAble: {
+                    action: false,
+                    msg: jErrMsgSprintf( '-102', '<%= t("bcvErr.VIDEO_NOT_PLAYABLE") %>' ),
+                },
+                'errCode_-2': {
+                    action: [ true, false ],
+                    msg: jErrMsgSprintf( '-2', '<%= t("bcvErr.PLAYER_ERR_TIMEOUT") %>' ),
+                },
+                'errCode_-1': {
+                    action: [ true, false ],
+                    msg: jErrMsgSprintf( '-1', '<%= t("bcvErr.PLAYER_ERR_NO_SRC") %>' ),
+                },
+                errCode_1: {
+                    action: false,
+                    msg: jErrMsgSprintf( '1', '<%= t("bcvErr.MEDIA_ERR_ABORTED") %>' ),
+                },
+                errCode_2: {
+                    action: [ true, false ],
+                    msg: jErrMsgSprintf( '2', '<%= t("bcvErr.MEDIA_ERR_NETWORK") %>' ),
+                },
+                errCode_3: {
+                    action: false,
+                    msg: jErrMsgSprintf( '3', '<%= t("bcvErr.MEDIA_ERR_DECODE") %>' ),
+                },
+                errCode_4: {
+                    action: false,
+                    msg: jErrMsgSprintf( '4', '<%= t("bcvErr.MEDIA_ERR_SRC_NOT_SUPPORTED") %>' ),
+                },
+                errCode_5: {
+                    action: false,
+                    msg: jErrMsgSprintf( '5', '<%= t("bcvErr.MEDIA_ERR_ENCRYPTED") %>' ),
+                },
+            },
+            informList: {
+                share: [ 'blockShowInf', 'share' ],
+                unLogin: [ 'blockWarn', 'unLogin' ],
+                emailUnValidate: [ 'blockWarn', 'emailUnValidate' ],
+                catchPlayRight: [ 'blockWarn', 'catchPlayRight' ],
+                unBuyValidate: [ 'blockWarn', 'unBuyValidate' ],
+                recommendUseApp: [ 'blockShowInf', 'recommendUseApp' ],
+            },
+        };
+    }());
+
+
+    var jSETPly = new bcvPlyInit( '<%= player_id %>', {
+            account: '<%= Settings.BrightCove.Account_ID %>',
+            videoID: '<%= video_id %>',
+            player: '<%= Settings.BrightCove.Player_ID %>',
+            embed: 'default',
+        } );
+
+    // 彈幕需求 必須在 document 下才可正確執行
+    document.getElementById('<%= parent_id %>').appendChild( jSETPly.v.el_ );
+    setPlyPlugin( jSETPly );
+
+    jSETPly.v.ready(function(){
+        window.chmiz_Ply = new mixtureOutBcvPly( jSETPly );
+    });
+  <% end %>
+<% end %>
+

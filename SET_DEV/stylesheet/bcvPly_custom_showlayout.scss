@@ -1,0 +1,512 @@
+.LxBcvPly {
+
+  .TxCustPly {
+      width: 100%;
+      height: 100%;
+  }
+  &.esYoutube {
+      > * {
+          display: none !important;
+      }
+
+      > .TxCustPly,
+      > .TxForceBlock {
+          display: block !important;
+      }
+  }
+
+  .TxTileOverlay {
+    &_watching {
+      display: none;
+    }
+
+    &_flyMsg {
+      display: none;
+    }
+  }
+  &.vjs-live .TxTileOverlay {
+    &_vidol {
+      display: none;
+    }
+
+    &_watching {
+      display: none;
+    }
+  }
+  &.esFlyMsg .TxTileOverlay {
+    &_flyMsg {
+      display: block;
+    }
+  }
+
+  body.esMobile & .TxPlyerTimeLine {
+    &.esLive .TxPlyerTimeLine_play {
+      width: 100% !important;
+    }
+  }
+
+  .TxBillboard {
+    &_dfpBanner {
+      display: none;
+    }
+  }
+
+
+  .TxTouchCtrl {
+      .TxIcon_live {
+        display: none;
+      }
+      .TxIcon_cyclicView {
+        display: none;
+      }
+      .TxIcon_flyMsg {
+        display: none;
+      }
+      .TxIcon_caption {
+        display: none;
+      }
+      .TxIcon_episode {
+        display: none;
+      }
+  }
+  &.vjs-live .TxTouchCtrl {
+    .TxIcon_live {
+      display: block;
+    }
+    .TxIcon_collect {
+      display: none;
+    }
+  }
+  &.esFlyMsg .TxTouchCtrl {
+    .TxIcon_flyMsg {
+      // display: block;
+      display: none;
+    }
+  }
+  &.esCyclicView .TxTouchCtrl {
+    .TxIcon_cyclicView {
+      display: block;
+    }
+  }
+
+
+
+  .TxBarCtrl {
+    .TxIcon_live {
+      display: none;
+    }
+    .TxIcon_cyclicView {
+      display: none;
+    }
+    .TxIcon_flyMsg {
+      display: none;
+    }
+    .TxIcon_caption {
+      display: none;
+    }
+  }
+  &.vjs-live .TxBarCtrl {
+    &_time {
+      display: none;
+    }
+    .TxIcon_live {
+      display: block;
+    }
+    .TxIcon_collect {
+      display: none;
+    }
+  }
+  &.esFlyMsg .TxBarCtrl {
+    .TxIcon_flyMsg {
+      // display: block;
+      display: none;
+    }
+  }
+  &.esCyclicView .TxBarCtrl {
+    .TxIcon_cyclicView {
+      display: block;
+    }
+  }
+
+
+  .TxTopBar {
+    &_otherBtnList {
+      .TxIcon_episode {
+        display: none;
+      }
+    }
+  }
+  &.vjs-live .TxTopBar {
+    &_otherBtnList {
+      .TxIcon_share {
+        display: block;
+      }
+      .TxIcon_collect {
+        display: none;
+      }
+    }
+  }
+  &.vjs-fullscreen .TxTopBar {
+    &_otherBtnList {
+      .TxIcon_episode {
+        // display: block;
+        display: none;
+      }
+    }
+  }
+  body.esPC & .TxTopBar {
+    &_otherBtnList {
+      i {
+        display: none;
+      }
+    }
+  }
+
+  .TxCtrlToolBar {
+    .TxIcon_caption {
+      display: none;
+    }
+    .TxIcon_flyMsg {
+      display: none;
+    }
+  }
+  &.esFlyMsg .TxCtrlToolBar {
+    .TxIcon_flyMsg {
+      display: block;
+    }
+  }
+
+  //舊版適應叉叉的重疊
+  .TxForceBlock {
+    @mixin scForceBlock() {
+      &_close {
+        width: 35px;
+        height: 35px;
+        top: 0.72em;
+        right: 0.78em;
+        z-index: 6;
+
+        &::before {
+          width: 35px;
+          height: 35px;
+          margin: 0;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+
+    &_error {
+      @include scForceBlock();
+    }
+    &_showInf {
+      @include scForceBlock();
+    }
+  }
+
+  .TxInform {
+    &_share {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      overflow: auto;
+
+      > li {
+        width: 5em;
+        height: 5em;
+        background-position: 50% 20%;
+        background-size: 60% 60%;
+        line-height: 9em;
+        text-align: center;
+      }
+    }
+    &_unLogin {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        overflow: auto;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        > div {
+            width: 240px;
+            height: 40px;
+            margin: -10px -10px;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+
+
+            > * {
+               position: absolute;
+               top: 0;
+               left: 0;
+               right: 0;
+               bottom: 0;
+               transition-duration: 0.6s;
+               transition-property: all;
+               transition-timing-function: linear;
+            }
+
+            > span {
+                display: block;
+                line-height: 3em;
+                overflow: hidden;
+                opacity: 1;
+            }
+
+            > button {
+                width: 100%;
+                background-color: #f36;
+                outline: none;
+                text-align: center;
+                color: #fff;
+                box-sizing: border-box;
+                opacity: 1;
+                cursor: pointer;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+                &:active {
+                    background: linear-gradient(to top, #3B29D2, #3224B0 100%);
+                }
+            }
+        }
+    }
+    &_emailUnValidate {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      overflow: auto;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+    }
+    &_catchPlayRight {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      overflow: auto;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+
+      > div {
+        display: inline-block;
+        text-align: center;
+
+        > button {
+          width: 26em;
+          max-width: 100%;
+          height: 3em;
+          padding: 0 1.6em;
+          background: #3B29D2;
+          background: linear-gradient(to bottom, #3B29D2, #3224B0 100%);
+          outline: none;
+          text-align: center;
+          color: #F6F028;
+          box-sizing: border-box;
+          cursor: pointer;
+
+          &:active {
+            background: linear-gradient(to top, #3B29D2, #3224B0 100%);
+          }
+        }
+      }
+    }
+    &_unBuyValidate {
+        width: 100%;
+        height: 100%;
+
+        > ul {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            overflow: auto;
+
+            > li {
+              width: 150px;
+              height: 70px;
+              margin: 5px;
+              display: inline-table;
+              text-align: center;
+              color: #fff;
+              box-sizing: initial;
+              background-color: #f36;
+              -moz-border-radius: 5px;
+              -webkit-border-radius: 5px;
+              border-radius: 5px;
+              a {
+                width: 100%;
+                height: 100%;
+                display: table-cell;
+                vertical-align: middle;
+                text-decoration: none;
+                cursor: pointer !important;
+                >span{
+                  display: block;
+                  clear: both;
+                }
+                >.caseName{
+                  color: #e9e93b !important;
+                  font-size: 0.7em;
+                  margin-bottom: 10px;
+                }
+                >.caseMoney{
+                  font-size: 1.4em;
+                  font-style: italic;
+                  >span.text{
+                    font-size: 0.3em;
+                    font-style: normal;
+                  }
+                }
+              }
+            }
+        }
+
+        > div {
+            width: 100%;
+            height: 100%;
+            display: none;
+            text-align: center;
+            overflow: auto;
+
+            &::before {
+              content: '';
+              display: inline-block;
+              height: 100%;
+              vertical-align: middle;
+            }
+        }
+    }
+    &_recommendUseApp {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      overflow: auto;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+
+      > div {
+        display: inline-block;
+        text-align: center;
+
+        > button {
+          width: 26em;
+          max-width: 100%;
+          height: 3em;
+          padding: 0 1.6em;
+          background: #3B29D2;
+          background: linear-gradient(to bottom, #3B29D2, #3224B0 100%);
+          outline: none;
+          text-align: center;
+          color: #F6F028;
+          box-sizing: border-box;
+          cursor: pointer;
+
+          &:active {
+            background: linear-gradient(to top, #3B29D2, #3224B0 100%);
+          }
+        }
+      }
+    }
+  }
+  &.esFloatPlyWindow,
+  &.esMobilePlyWindow {
+      .TxInform_unBuyValidate {
+          > ul {
+              display: none;
+          }
+          > div {
+              display: block;
+          }
+      }
+  }
+
+  %scNone {
+    display: none !important;
+  }
+  &.esFloatPlyWindow {
+    .TxBarCtrl {
+      &_time {
+        @extend %scNone;
+      }
+      &_voice {
+        @extend %scNone;
+      }
+      .TxIcon_live {
+        @extend %scNone;
+      }
+      .TxIcon_cyclicView {
+        @extend %scNone;
+      }
+      .TxIcon_flyMsg {
+        @extend %scNone;
+      }
+      .TxIcon_caption {
+        @extend %scNone;
+      }
+      .TxIcon_collect {
+        @extend %scNone;
+      }
+    }
+  }
+  &.esMobilePlyWindow {
+    .TxBillboard {
+      &_dfpBanner {
+        @extend %scNone;
+      }
+    }
+    .TxBarCtrl {
+      &_time {
+        @extend %scNone;
+      }
+      .TxIcon_live {
+        @extend %scNone;
+      }
+      .TxIcon_cyclicView {
+        @extend %scNone;
+      }
+      .TxIcon_flyMsg {
+        @extend %scNone;
+      }
+      .TxIcon_caption {
+        @extend %scNone;
+      }
+    }
+  }
+  &.esScreenPlyWindow {
+  }
+}
+
+//舊版適應叉叉的重疊
+#video_play_win {
+  z-index: initial;
+}
+

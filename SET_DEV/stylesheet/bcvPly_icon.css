@@ -1,0 +1,101 @@
+.LxBcvPly .TxIcon,
+.LxBcvPly .TxIcon_before::before {
+  background-image: url('/SET_DEV/images/player/player_allicon.svg');
+  background-repeat: no-repeat;
+}
+.LxBcvPly .TxIcon_before::before {
+  content: '';
+}
+.LxBcvPly .TxTileOverlay_vidol {
+  background-image: url('/SET_DEV/images/player/vidol_logo.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.LxBcvPly.vjs-playing .TxIcon_play::before {
+  background-position: 0% 60%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_play::before {
+  background-position: 0% 50%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_play.esPause::before {
+  background-position: 0% 60%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_touchBrightness {
+  background-position: 0% 90%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_touchBrightness .TxTouchCtrl_center_adjustR > i {
+  background-position: 100% 90%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_touchVoice {
+  background-position: 0% 100%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_touchVoice .TxTouchCtrl_center_adjustR > i {
+  background-position: 100% 100%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_voice {
+  background-position: 0% 0%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_voice .TxBarCtrl_voiceR > i {
+  background-position: 100% 0%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_live::before {
+  background-position: 0% 70%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_live.esUpdate::before {
+  background-position: 100% 70%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_cyclicView::before {
+  background-position: 0% 20%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_tool {
+  display: none;
+}
+.LxBcvPly .TxIcon_flyMsg::before {
+  background-position: 0% 30%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_flyMsg.esOpen::before {
+  background-position: 100% 30%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_caption {
+  display: none;
+}
+.LxBcvPly .TxIcon_collect::before {
+  background-position: 0% 40%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_collect.esHave::before {
+  background-position: 100% 40%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_share {
+  display: none;
+}
+.LxBcvPly .TxIcon_full::before {
+  background-position: 0% 10%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly.vjs-fullscreen .TxIcon_full::before {
+  background-position: 100% 10%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_X::before {
+  background-position: 100% 80%;
+  background-size: 200% 1084%;
+}
+.LxBcvPly .TxIcon_episode {
+  display: none;
+}

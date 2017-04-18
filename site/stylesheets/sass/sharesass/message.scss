@@ -1,0 +1,279 @@
+$message_name_color:#FFC107;
+$message_con_color :#fff;
+$message_time_color:#777;
+
+.messageUl{
+  width: 100%;
+  float: left;
+  >li{
+    width: 100%;
+    float: left;
+    padding:5px 0px;
+    >.left{
+      float: left;
+      >.img{
+        width: 100%;
+        height: 100%;
+        float: left;
+        background-color: #ccc;
+        @extend .bg_share;
+        @include size1(cover);
+        @include radius1(100px);
+      }
+    }
+    >.right{
+      float: right;
+      position: relative;
+      textarea{
+        width: 100%;
+        min-height: 60px;
+        float: left;
+        padding:10px;
+        border:1px solid #ccc;
+        -webkit-appearance:none;
+        @include radius1(0px);
+      }
+      .name{
+        color: $message_name_color;
+        width: 100%;
+      }
+      p{
+        color: $message_con_color;
+        line-height: 1.5em;
+      }
+      .time{
+        color: $message_time_color;
+      }
+      >.action{
+        width: 100%;
+        float: left;
+        padding: 5px;
+        background-color: #ececec;
+        border:1px solid #ccc;
+        border-top: none;
+        button[type=subimt]{
+          width: 60px;
+          height: 25px;
+          float: right;
+          border:none;
+          color:#fff;
+          background-color: $mainColor2;
+        }
+      }
+      >.block{
+        width: 100%;
+        float: left;
+        padding:2px 0px;
+        >button{
+          width: 35px;
+          height: 25px;
+          border:none;
+          background-color: transparent;
+          cursor: pointer;
+          font-size: 0.9em;
+          color: $mainColor2;
+        }
+      }
+    }
+  }
+  &.style1{
+    padding:0px 10px;
+    >li{
+      >.left{
+        width: 10%;
+        padding:10px;
+      }
+      >.right{
+        width: 90%;
+        padding:5px 0px;
+        .name{
+          font-size: 1em;
+        }
+        p{
+          font-size: 1em;
+        }
+        .time{
+          font-size: 0.7em;
+        }
+        .messageUl{
+          width: 100%;
+          float: left;
+          margin-left: -30px;
+          padding:5px 0px;
+          >li{
+            width: 100%;
+            float: left;
+            >.left{
+              width: 9%;
+              padding:5px;
+            }
+            >.right{
+              width: 89%;
+              padding:5px 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.style2{
+    padding:0px 10px;
+    >li{
+      >.left{
+        width: 11%;
+        padding:10px;
+      }
+      >.right{
+        width: 89%;
+        padding:10px 0px;
+        .name{
+          font-size: 1em;
+        }
+        p{
+          font-size: 1em;
+        }
+        .time{
+          font-size: 0.7em;
+        }
+        .messageUl{
+          width: 100%;
+          float: left;
+          padding:5px 0px;
+          >li{
+            width: 100%;
+            float: left;
+            >.left{
+              width: 9%;
+              padding:5px;
+            }
+            >.right{
+              width: 90%;
+              padding:5px 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.style3{
+    padding:0px 5px;
+    >li{
+      >.left{
+        width: 12%;
+        padding:5px;
+      }
+      >.right{
+        width: 88%;
+        padding:5px 0px 5px 5px;
+        .name{
+          font-size: 1em;
+        }
+        p{
+          font-size: 1em;
+        }
+        .time{
+          font-size: 0.7em;
+        }
+        .messageUl{
+          width: 100%;
+          float: left;
+          margin-left: -30px;
+          padding:5px 0px;
+          >li{
+            width: 100%;
+            float: left;
+            >.left{
+              width: 11%;
+              padding:5px;
+            }
+            >.right{
+              width: 89%;
+              padding:5px 0px 5px 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.style4{
+    padding:0px 5px;
+    >li{
+      >.left{
+        width: 12%;
+        padding:5px;
+      }
+      >.right{
+        width: 88%;
+        padding:5px 0px 5px 5px;
+        .name{
+          font-size: 1em;
+        }
+        p{
+          font-size: 1em;
+          line-height: 1.5em;
+        }
+        .time{
+          font-size: 0.7em;
+        }
+        .messageUl{
+          width: 100%;
+          float: left;
+          padding:5px 0px;
+          >li{
+            width: 100%;
+            float: left;
+            >.left{
+              width: 9%;
+              padding:4px;
+            }
+            >.right{
+              width: 91%;
+              padding:5px 0px 5px 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.style5{
+    padding:0px 5px;
+    >li{
+      >.left{
+        width: 14%;
+        padding:5px;
+      }
+      >.right{
+        width: 86%;
+        padding:0px 0px 0px 5px;
+        .name{
+          font-size: 0.9em;
+        }
+        p{
+          font-size: 0.9em;
+        }
+        .time{
+          font-size: 0.6em;
+        }
+        .messageUl{
+          width: 105%;
+          float: left;
+
+          padding:5px 0px;
+          >li{
+            width: 100%;
+            float: left;
+            margin-left: -5%;
+            >.left{
+              width: 14%;
+              padding:5px;
+            }
+            >.right{
+              width: 86%;
+              padding:5px 0px 5px 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

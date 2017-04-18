@@ -1,0 +1,18 @@
+<?php
+ini_set ( 'display_errors', 'On' ); // On, Off
+if(!session_id()) {
+	session_start();
+}
+define ( '__ROOT__', dirname ( __FILE__ ) );
+define ( '__LIB_PATH__', dirname ( dirname ( __FILE__ ) ) );
+define ( '__DONAME__', $_SERVER ['HTTP_HOST'] );
+define ( '__PUTH__', 'chatroom' );
+define ( '__URI_HOME__', sprintf ( 'http://%s/%s/%s', __DONAME__, __PUTH__, 'index.php' ) );
+define ( '__URI_AUTH__', sprintf ( 'http://%s/%s/%s', __DONAME__, __PUTH__, 'auth.fb.php' ) );
+define ( '__URI_LOGOUT__', sprintf ( 'http://%s/%s/%s', __DONAME__, __PUTH__, 'auth.fb.php' ) );
+define ( '__URI_META__', sprintf ( 'http://%s/%s/', __DONAME__, __PUTH__ ) );
+define ( '__FB_ID__', '' );
+define ( '__FB_SECRET__', '' );
+define ( '__GOOGLE_AUTH_KEY__', '' );
+require_once (__LIB_PATH__ . '/third_party/Facebook/autoload.php');
+?>

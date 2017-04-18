@@ -1,0 +1,362 @@
+.LxBcvPly .TxCustPly {
+  width: 100%;
+  height: 100%;
+}
+.LxBcvPly.esYoutube > * {
+  display: none !important;
+}
+.LxBcvPly.esYoutube > .TxCustPly,
+.LxBcvPly.esYoutube > .TxForceBlock {
+  display: block !important;
+}
+.LxBcvPly .TxTileOverlay_watching {
+  display: none;
+}
+.LxBcvPly .TxTileOverlay_flyMsg {
+  display: none;
+}
+.LxBcvPly.vjs-live .TxTileOverlay_vidol {
+  display: none;
+}
+.LxBcvPly.vjs-live .TxTileOverlay_watching {
+  display: none;
+}
+.LxBcvPly.esFlyMsg .TxTileOverlay_flyMsg {
+  display: block;
+}
+body.esMobile .LxBcvPly .TxPlyerTimeLine.esLive .TxPlyerTimeLine_play {
+  width: 100% !important;
+}
+.LxBcvPly .TxBillboard_dfpBanner {
+  display: none;
+}
+.LxBcvPly .TxTouchCtrl .TxIcon_live {
+  display: none;
+}
+.LxBcvPly .TxTouchCtrl .TxIcon_cyclicView {
+  display: none;
+}
+.LxBcvPly .TxTouchCtrl .TxIcon_flyMsg {
+  display: none;
+}
+.LxBcvPly .TxTouchCtrl .TxIcon_caption {
+  display: none;
+}
+.LxBcvPly .TxTouchCtrl .TxIcon_episode {
+  display: none;
+}
+.LxBcvPly.vjs-live .TxTouchCtrl .TxIcon_live {
+  display: block;
+}
+.LxBcvPly.vjs-live .TxTouchCtrl .TxIcon_collect {
+  display: none;
+}
+.LxBcvPly.esFlyMsg .TxTouchCtrl .TxIcon_flyMsg {
+  display: none;
+}
+.LxBcvPly.esCyclicView .TxTouchCtrl .TxIcon_cyclicView {
+  display: block;
+}
+.LxBcvPly .TxBarCtrl .TxIcon_live {
+  display: none;
+}
+.LxBcvPly .TxBarCtrl .TxIcon_cyclicView {
+  display: none;
+}
+.LxBcvPly .TxBarCtrl .TxIcon_flyMsg {
+  display: none;
+}
+.LxBcvPly .TxBarCtrl .TxIcon_caption {
+  display: none;
+}
+.LxBcvPly.vjs-live .TxBarCtrl_time {
+  display: none;
+}
+.LxBcvPly.vjs-live .TxBarCtrl .TxIcon_live {
+  display: block;
+}
+.LxBcvPly.vjs-live .TxBarCtrl .TxIcon_collect {
+  display: none;
+}
+.LxBcvPly.esFlyMsg .TxBarCtrl .TxIcon_flyMsg {
+  display: none;
+}
+.LxBcvPly.esCyclicView .TxBarCtrl .TxIcon_cyclicView {
+  display: block;
+}
+.LxBcvPly .TxTopBar_otherBtnList .TxIcon_episode {
+  display: none;
+}
+.LxBcvPly.vjs-live .TxTopBar_otherBtnList .TxIcon_share {
+  display: block;
+}
+.LxBcvPly.vjs-live .TxTopBar_otherBtnList .TxIcon_collect {
+  display: none;
+}
+.LxBcvPly.vjs-fullscreen .TxTopBar_otherBtnList .TxIcon_episode {
+  display: none;
+}
+body.esPC .LxBcvPly .TxTopBar_otherBtnList i {
+  display: none;
+}
+.LxBcvPly .TxCtrlToolBar .TxIcon_caption {
+  display: none;
+}
+.LxBcvPly .TxCtrlToolBar .TxIcon_flyMsg {
+  display: none;
+}
+.LxBcvPly.esFlyMsg .TxCtrlToolBar .TxIcon_flyMsg {
+  display: block;
+}
+.LxBcvPly .TxForceBlock_error_close {
+  width: 35px;
+  height: 35px;
+  top: 0.72em;
+  right: 0.78em;
+  z-index: 6;
+}
+.LxBcvPly .TxForceBlock_error_close::before {
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+.LxBcvPly .TxForceBlock_showInf_close {
+  width: 35px;
+  height: 35px;
+  top: 0.72em;
+  right: 0.78em;
+  z-index: 6;
+}
+.LxBcvPly .TxForceBlock_showInf_close::before {
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+.LxBcvPly .TxInform_share {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.LxBcvPly .TxInform_share > li {
+  width: 5em;
+  height: 5em;
+  background-position: 50% 20%;
+  background-size: 60% 60%;
+  line-height: 9em;
+  text-align: center;
+}
+.LxBcvPly .TxInform_unLogin {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+}
+.LxBcvPly .TxInform_unLogin::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.LxBcvPly .TxInform_unLogin > div {
+  width: 240px;
+  height: 40px;
+  margin: -10px -10px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+.LxBcvPly .TxInform_unLogin > div > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition-duration: 0.6s;
+  transition-property: all;
+  transition-timing-function: linear;
+}
+.LxBcvPly .TxInform_unLogin > div > span {
+  display: block;
+  line-height: 3em;
+  overflow: hidden;
+  opacity: 1;
+}
+.LxBcvPly .TxInform_unLogin > div > button {
+  width: 100%;
+  background-color: #f36;
+  outline: none;
+  text-align: center;
+  color: #fff;
+  box-sizing: border-box;
+  opacity: 1;
+  cursor: pointer;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.LxBcvPly .TxInform_unLogin > div > button:active {
+  background: linear-gradient(to top, #3B29D2, #3224B0 100%);
+}
+.LxBcvPly .TxInform_emailUnValidate {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+}
+.LxBcvPly .TxInform_emailUnValidate::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.LxBcvPly .TxInform_catchPlayRight {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+}
+.LxBcvPly .TxInform_catchPlayRight::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.LxBcvPly .TxInform_catchPlayRight > div {
+  display: inline-block;
+  text-align: center;
+}
+.LxBcvPly .TxInform_catchPlayRight > div > button {
+  width: 26em;
+  max-width: 100%;
+  height: 3em;
+  padding: 0 1.6em;
+  background: #3B29D2;
+  background: linear-gradient(to bottom, #3B29D2, #3224B0 100%);
+  outline: none;
+  text-align: center;
+  color: #F6F028;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.LxBcvPly .TxInform_catchPlayRight > div > button:active {
+  background: linear-gradient(to top, #3B29D2, #3224B0 100%);
+}
+.LxBcvPly .TxInform_unBuyValidate {
+  width: 100%;
+  height: 100%;
+}
+.LxBcvPly .TxInform_unBuyValidate > ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.LxBcvPly .TxInform_unBuyValidate > ul > li {
+  width: 150px;
+  height: 70px;
+  margin: 5px;
+  display: inline-table;
+  text-align: center;
+  color: #fff;
+  box-sizing: initial;
+  background-color: #f36;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.LxBcvPly .TxInform_unBuyValidate > ul > li a {
+  width: 100%;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-decoration: none;
+  cursor: pointer !important;
+}
+.LxBcvPly .TxInform_unBuyValidate > ul > li a > span {
+  display: block;
+  clear: both;
+}
+.LxBcvPly .TxInform_unBuyValidate > ul > li a > .caseName {
+  color: #e9e93b !important;
+  font-size: 0.7em;
+  margin-bottom: 10px;
+}
+.LxBcvPly .TxInform_unBuyValidate > ul > li a > .caseMoney {
+  font-size: 1.4em;
+  font-style: italic;
+}
+.LxBcvPly .TxInform_unBuyValidate > ul > li a > .caseMoney > span.text {
+  font-size: 0.3em;
+  font-style: normal;
+}
+.LxBcvPly .TxInform_unBuyValidate > div {
+  width: 100%;
+  height: 100%;
+  display: none;
+  text-align: center;
+  overflow: auto;
+}
+.LxBcvPly .TxInform_unBuyValidate > div::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.LxBcvPly .TxInform_recommendUseApp {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+}
+.LxBcvPly .TxInform_recommendUseApp::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.LxBcvPly .TxInform_recommendUseApp > div {
+  display: inline-block;
+  text-align: center;
+}
+.LxBcvPly .TxInform_recommendUseApp > div > button {
+  width: 26em;
+  max-width: 100%;
+  height: 3em;
+  padding: 0 1.6em;
+  background: #3B29D2;
+  background: linear-gradient(to bottom, #3B29D2, #3224B0 100%);
+  outline: none;
+  text-align: center;
+  color: #F6F028;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.LxBcvPly .TxInform_recommendUseApp > div > button:active {
+  background: linear-gradient(to top, #3B29D2, #3224B0 100%);
+}
+.LxBcvPly.esFloatPlyWindow .TxInform_unBuyValidate > ul, .LxBcvPly.esMobilePlyWindow .TxInform_unBuyValidate > ul {
+  display: none;
+}
+.LxBcvPly.esFloatPlyWindow .TxInform_unBuyValidate > div, .LxBcvPly.esMobilePlyWindow .TxInform_unBuyValidate > div {
+  display: block;
+}
+.LxBcvPly.esFloatPlyWindow .TxBarCtrl_time, .LxBcvPly.esFloatPlyWindow .TxBarCtrl_voice, .LxBcvPly.esFloatPlyWindow .TxBarCtrl .TxIcon_live, .LxBcvPly.esFloatPlyWindow .TxBarCtrl .TxIcon_cyclicView, .LxBcvPly.esFloatPlyWindow .TxBarCtrl .TxIcon_flyMsg, .LxBcvPly.esFloatPlyWindow .TxBarCtrl .TxIcon_caption, .LxBcvPly.esFloatPlyWindow .TxBarCtrl .TxIcon_collect, .LxBcvPly.esMobilePlyWindow .TxBillboard_dfpBanner, .LxBcvPly.esMobilePlyWindow .TxBarCtrl_time, .LxBcvPly.esMobilePlyWindow .TxBarCtrl .TxIcon_live, .LxBcvPly.esMobilePlyWindow .TxBarCtrl .TxIcon_cyclicView, .LxBcvPly.esMobilePlyWindow .TxBarCtrl .TxIcon_flyMsg, .LxBcvPly.esMobilePlyWindow .TxBarCtrl .TxIcon_caption {
+  display: none !important;
+}
+
+#video_play_win {
+  z-index: initial;
+}

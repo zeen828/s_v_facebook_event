@@ -1,0 +1,953 @@
+%sjProp_fullSize {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+%sjProp_absFull {
+  position: absolute;
+  @extend %sjProp_fullSize;
+}
+%sjProp_cutString {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+%sjProp_ulList {
+  display: block;
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+%sjProp_ulLineList {
+  @extend %sjProp_ulList;
+
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  > li {
+    float: left;
+  }
+}
+
+
+.csNone {
+  display: none !important;
+}
+
+.csDisplayBlock {
+  display: block !important;
+}
+
+.csVisible {
+  visibility: visible !important;
+}
+
+.csVisibilityHidden {
+  visibility: hidden !important;
+}
+
+
+.LxBcvPly {
+
+//>> 修改原始部分 -----
+
+
+    &.vjs-seeking .vjs-loading-spinner:before,
+    &.vjs-waiting .vjs-loading-spinner:before {
+        border-left-color: white;
+        animation: vjs-spinner-spin 0.38s linear infinite;
+    }
+
+    &.vjs-seeking .vjs-loading-spinner:after,
+    &.vjs-waiting .vjs-loading-spinner:after {
+        content: initial;
+    }
+
+    .vjs-menu,
+    .vjs-error-display {
+        display: none !important;
+    }
+
+
+//>> 設定選項 -----
+
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 400px) {
+    font-size: 8px;
+  }
+  @media (min-width: 400px) and (max-width: 1000px) {
+    font-size: 2vw;
+  }
+  @media (min-width: 1000px) {
+    font-size: 20px;
+  }
+
+  *,
+  *:hover,
+  *:active {
+    cursor: default;
+  }
+  &.vjs-fullscreen * {
+    cursor: none;
+  }
+  &.vjs-fullscreen.esBGTopTurnOn *,
+  &.vjs-fullscreen.esBGBottomTurnOn * {
+    cursor: default;
+  }
+  .TxIcon,
+  .TxIcon_before,
+  .TxPlyerTimeLine,
+  .TxPlyerTimeLine *,
+  .TxBarCtrl_voice * {
+    cursor: pointer;
+  }
+
+
+//>> -----
+
+  .TxVideoSubstitute {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+  }
+
+  .TxTileOverlay {
+    pointer-events: none;
+
+    &_watching {
+        width: 100%;
+        height: 1.3em;
+        text-align: center;
+        position: absolute;
+        top: 0.4em;
+
+        div {
+            height: 1.3em;
+            display: inline-block;
+            padding: 0 0.4em;
+            position: relative;
+            border-radius: 0.1em;
+            color: #fff;
+
+            span {
+                font-size: 0.7em;
+            }
+        }
+
+        &_live {
+            background-color: #D50000;
+        }
+
+        &_num {
+            margin-left: 0.1em;
+            background: rgba(0,0,0,0.3);
+        }
+    }
+
+    &_vidol {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      opacity: 0.6;
+    }
+    &_flyMsg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 8px;
+
+      &_show {
+        @extend %sjProp_absFull;
+      }
+    }
+    &_background {
+      @extend %sjProp_absFull;
+
+      &_top,
+      &_bottom {
+        width: 100%;
+        height: 50%;
+        display: block;
+        position: absolute;
+        transition: top, bottom 230ms linear;
+      }
+      &_top {
+        top: -50%;
+      }
+      &_bottom {
+        bottom: -50%;
+      }
+    }
+    &_brightnessForTouch {
+        @extend %sjProp_absFull;
+        background: rgba(0, 10, 0, 0.6);
+        opacity: 0;
+    }
+  }
+  &.esBGTopTurnOn .TxTileOverlay {
+    &_background_top {
+      top: 0;
+    }
+  }
+  &.esBGBottomTurnOn .TxTileOverlay {
+    &_background_bottom {
+      bottom: 0;
+    }
+  }
+  body.esPC & .TxTileOverlay {
+    &_background_top {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 4em);
+    }
+  }
+  body.esPC & .TxTileOverlay {
+    &_background_bottom {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 4em);
+    }
+  }
+  body.esMobile & .TxTileOverlay {
+    &_background_top {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 112%);
+    }
+  }
+  body.esMobile & .TxTileOverlay {
+    &_background_bottom {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 112%);
+    }
+  }
+
+
+  .TxBillboard {
+    position: absolute;
+    top: 0.4em;
+    left: 0;
+    right: 0;
+    bottom: 0.4em;
+    transition: top, bottom 230ms linear;
+    pointer-events: none;
+
+    &_dfpBanner {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      pointer-events: auto;
+      box-sizing: content-box;
+
+      &_default,
+      &_content {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &_default,
+      &_close {
+        transition: opacity 600ms linear;
+        opacity: 0;
+        visibility: hidden;
+      }
+      &_content {
+        overflow: hidden;
+      }
+      &_default {
+        background-color: rgba(0,0,0,0.4);
+      }
+      &_close {
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        top: 0em;
+        right: 0em;
+        border-radius: 50%;
+
+        &::before {
+          content: '';
+          width: 15px;
+          height: 15px;
+          margin: -7.5px;
+          display: block;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAQAAACR313BAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAACzSURBVBjTddAtzsJAEADQt1CN/xRBIIFwge8AeAzpabgIHiQCT3qD4hCEQIIkBNtQzLY0gY7YzOzb3wlT8/Lfr9jbhLAqh9riKGQlg594QqcqcvlXRlJN7cCokdUcXMHOxQFcjakO70rj6kPcmep+uPCQ6sf7+lIPxYcpZM6Rz7KINee2oAe29dsjX8DE0qRR1x+bIVi4W3gpzSI3upagiGPVteTmz6ml5zeddXi24NM6vAFhCzSMfomhxwAAAABJRU5ErkJggg==);
+        }
+      }
+
+      &.esCanClose .TxBillboard_dfpBanner {
+        &_default,
+        &_close {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  &.esBGTopTurnOn .TxBillboard {
+    top: 3em;
+  }
+  &.esBGBottomTurnOn .TxBillboard {
+    bottom: 3em;
+  }
+
+  .TxPlyerTimeLine {
+    width: 100%;
+    height: 0.1em;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 0.5;
+    transition: height, bottom 230ms linear;
+
+    .TxPlyerTimeLine_floatShow {
+      width: 64px;
+      height: 16px;
+      margin-left: -32px;
+      display: none;
+      position: absolute;
+      top: -26px;
+      left: 0;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+    }
+    &.esFloat .TxPlyerTimeLine_floatShow,
+    &.esDrag .TxPlyerTimeLine_floatShow,
+    &.esOperate .TxPlyerTimeLine_floatShow {
+      display: block;
+
+      @media (max-width: 400px) {
+        font-size: 8px;
+      }
+      @media (min-width: 400px) and (max-width: 1000px) {
+        font-size: 1.33333vw;
+      }
+      @media (min-width: 1000px) {
+        font-size: 16px;
+      }
+    }
+
+    .TxPlyerTimeLine_buffer,
+    .TxPlyerTimeLine_play {
+      width: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+    .TxPlyerTimeLine_buffer {
+      background: rgba(255, 255, 255, 0.3);
+      opacity: 0;
+    }
+    &.esLive .TxPlyerTimeLine_buffer {
+      width: 0 !important;
+    }
+    .TxPlyerTimeLine_play {
+      background: #F5F223;
+
+      > b {
+        width: 0.6em;
+        height: 0.6em;
+        border: 0.2em #FFF solid;
+        display: none;
+        position: absolute;
+        top: -0.2em;
+        right: -0.5em;
+        background: #FFF;
+        border-radius: 50%;
+        box-sizing: content-box;
+      }
+    }
+    &.esLive .TxPlyerTimeLine_play {
+      width: 100%;
+    }
+    &.esFloat .TxPlyerTimeLine_play > b,
+    &.esDrag .TxPlyerTimeLine_play > b,
+    &.esOperate .TxPlyerTimeLine_play > b {
+      display: block;
+    }
+    & .TxBarCtrl_timeLine_part {
+      height: 100%;
+
+      b {
+        width: 0.3em;
+        height: 100%;
+        margin-left: -0.15em;
+        float: left;
+        position: absolute;
+        left: -0.3em;
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+  &.esBarCtrlTurnOn .TxPlyerTimeLine {
+    height: 0.3em;
+    bottom: 2em;
+    opacity: 1;
+
+    .TxPlyerTimeLine_buffer {
+      opacity: 1;
+    }
+  }
+  %scOperatePlayTime {
+      height: 0.6em;
+
+      .TxPlyerTimeLine_play > b {
+          display: block;
+          width: 0.6em;
+          height: 0.6em;
+      }
+  }
+  body.esMobile & .TxPlyerTimeLine {
+    &.esOperate {
+      @extend %scOperatePlayTime;
+      opacity: 1;
+    }
+  }
+  body.esMobile &.esBarCtrlTurnOn .TxPlyerTimeLine {
+    @extend %scOperatePlayTime;
+    bottom: 0;
+    opacity: 0.6;
+
+    &.esOperate {
+      opacity: 1;
+    }
+  }
+
+
+  .TxTopBar_title,
+  .TxForceBlock_error_title,
+  .TxForceBlock_warn_title,
+  .TxForceBlock_showInf_title,
+  .TxInform_share > li,
+  .TxInform_catchPlayRight > div > button,
+  .TxInform_unBuyValidate > li {
+    @extend %sjProp_cutString;
+  }
+
+  .TxInform_share,
+  .TxInform_unBuyValidate {
+    @extend %sjProp_ulLineList;
+  }
+
+  .LxBcvPly .TxInform_emailUnValidate {
+    text-align: center;
+  }
+  .LxBcvPly .TxInform_emailUnValidate::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  .TxTouchCtrl {
+      @extend %sjProp_absFull;
+
+      .TxIcon,
+      .TxIcon_before {
+          width: 3em;
+          height: 3em;
+          float: left;
+          position: relative;
+      }
+      .TxIcon_before::before {
+          width: 2em;
+          height: 2em;
+          margin: -1em;
+          display: block;
+          position: relative;
+          top: 50%;
+          left: 50%;
+      }
+
+      &_left {
+          width: 20%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+      }
+
+      &_center {
+          position: absolute;
+          top: 0;
+          left: 20%;
+          right: 20%;
+          bottom: 0;
+
+          %scCenterIcon {
+              width: 4.2em;
+              height: 4.2em;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              margin: -2em;
+          }
+
+          .TxIcon_play {
+              @extend %scCenterIcon;
+              display: none;
+
+              &::before {
+                  width: 3.6em;
+                  height: 3.6em;
+                  margin: -1.8em;
+              }
+          }
+
+          &_adjust {
+              @extend %scCenterIcon;
+              display: none;
+
+              &R {
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  position: absolute;
+                  bottom: 0;
+                  overflow: hidden;
+
+                  i.TxIcon_adjustR {
+                      width: 4.2em;
+                      height: 4.2em;
+                      float: left;
+                      position: absolute;
+                      bottom: 0;
+                  }
+              }
+          }
+      }
+
+      &_right {
+          width: 20%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+      }
+
+
+      %scToolBox {
+          height: 3em;
+          position: absolute;
+
+          > * {
+              float: left;
+              margin: 0;
+              padding: 0;
+              opacity: 1;
+          }
+      }
+
+      &_infoState {
+          @extend %scToolBox;
+          display: none;
+          left: 0.3em;
+          bottom: 0.9em;
+      }
+
+      &_topToolBar {
+          @extend %scToolBox;
+          display: none;
+          top: 0.3em;
+          right: 0.3em;
+      }
+
+      &_toolBar {
+          @extend %scToolBox;
+          display: none;
+          right: 0.3em;
+          bottom: 0.9em;
+      }
+
+      &_timeLine {
+          height: 0.6em;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+      }
+
+      &.esCloss {
+          .TxTouchCtrl_center .TxIcon_play,
+          .TxTouchCtrl_infoState,
+          .TxTouchCtrl_topToolBar,
+          .TxTouchCtrl_toolBar {
+              display: none;
+          }
+      }
+
+      &.esAdjustVolume {
+          .TxIcon,
+          .TxIcon_before,
+          .TxTouchCtrl_infoState,
+          .TxTouchCtrl_topToolBar,
+          .TxTouchCtrl_toolBar {
+              display: none;
+          }
+          .TxTouchCtrl_center {
+              .TxIcon_play {
+                  display: none;
+              }
+
+              &_adjust {
+                  display: block;
+
+                  &R i.TxIcon_adjustR {
+                      display: block;
+                  }
+              }
+          }
+      }
+  }
+  &.esBarCtrlTurnOn .TxTouchCtrl {
+      &_center .TxIcon_play,
+      &_infoState,
+      &_topToolBar,
+      &_toolBar {
+          display: block;
+      }
+  }
+
+  .TxBarCtrl {
+    height: 2em;
+    line-height: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0.6em;
+    right: 0.6em;
+    bottom: -2em;
+    transition: bottom 230ms linear;
+
+    > *,
+    &_voice > * {
+      float: left;
+      margin: 0;
+      padding: 0;
+      opacity: 1;
+    }
+
+    .TxIcon,
+    .TxIcon_before {
+      width: 2em;
+      height: 2em;
+      flex: 0 0 auto;
+      float: left;
+      position: relative;
+    }
+    .TxIcon_before::before {
+      width: 1.2em;
+      height: 1.2em;
+      margin: -0.6em;
+      display: block;
+      position: relative;
+      top: 50%;
+      left: 50%;
+    }
+
+    .TxIcon_play {
+      margin-right: 0.3em;
+    }
+    &_time {
+      display: block;
+      flex: 0 0 auto;
+      margin: 0 0.2em;
+
+      span {
+        float: left;
+        font-size: 0.7em;
+      }
+      &_duration::before {
+        content: "/";
+        margin: 0 0.2em;
+      }
+    }
+
+    &_space {
+      flex: 1 0 auto;
+    }
+
+    &_voice {
+      min-width: 2em;
+      flex: 0 0 auto;
+
+      .TxIcon_voice {
+        width: 1.2em;
+        height: 1.2em;
+        margin: 0.4em;
+
+        .TxBarCtrl_voiceR {
+          width: 100%;
+          height: 1.2em;
+          display: block;
+          overflow: hidden;
+
+          .TxIcon_voiceR {
+            width: 1.2em;
+            height: 1.2em;
+            float: left;
+            position: relative;
+          }
+        }
+      }
+
+      &_drawBar {
+        width: 3.2em;
+        height: 2em;
+        margin: 0 0.4em 0 -0.2em;
+        position: relative;
+        overflow: hidden;
+        box-sizing: content-box;
+        transition: width 230ms linear;
+
+        div {
+          width: 2.432em;
+          height: 0.4em;
+          margin-top: -0.2em;
+          position: absolute;
+          top: 50%;
+          left: 12%;
+          background: rgba(0, 0, 0, 0.4);
+          border-radius: 7px;
+
+          b {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            border-radius: 6px;
+            box-sizing: content-box;
+            background: #F8EB58;
+
+            &::before {
+              content: '';
+              width: 0.42em;
+              height: 0.42em;
+              margin-top: -1px;
+              margin-right: -0.26em;
+              display: block;
+              position: absolute;
+              right: 0;
+              background: #FFF;
+              border: 1px #FFF solid;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.esBarCtrlTurnOn .TxBarCtrl {
+    bottom: 0;
+  }
+
+  .TxTopBar {
+    width: 100%;
+    height: 2.3em;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &_title {
+      height: 2em;
+      line-height: 2em;
+      padding: 0px 1em 0px 0.4em;
+      flex: 1 4 auto;
+      color: #FFF;
+
+      span {
+        font-size: 1.2em;
+      }
+    }
+    &_otherBtnList {
+      flex: 0 0 auto;
+      height: 2em;
+
+      i {
+        width: 2em;
+        height: 2em;
+        margin: 0;
+        float: left;
+        opacity: 0.9;
+      }
+    }
+  }
+  &.esTopBarTurnOn .TxTopBar {
+    display: flex;
+  }
+  &.esTopBarListTurnOn .TxTopBar_title .TxTitle {
+    display: none;
+  }
+  body.esPC & .TxTopBar {
+    &_otherBtnList i:hover {
+      opacity: 1;
+    }
+  }
+  body.esMobile & .TxTopBar {
+    &_otherBtnList i {
+      margin: 0 0.12em;
+    }
+  }
+
+  .TxCtrlToolBar {
+    height: 2em;
+    display: none;
+    position: absolute;
+    right: 0.6em;
+    bottom: 2.6em;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+
+    > * {
+      float: left;
+      margin: 0;
+      padding: 0;
+      opacity: 1;
+    }
+
+    .TxIcon_before {
+      width: 2em;
+      height: 2em;
+      flex: 0 0 auto;
+      float: left;
+      position: relative;
+
+      &::before {
+        width: 1.6em;
+        height: 1.6em;
+        margin: -0.8em;
+        display: block;
+        position: relative;
+        top: 50%;
+        left: 50%;
+      }
+    }
+  }
+
+  .TxFloatBlock,
+  .TxForceBlock {
+    position: absolute;
+    box-sizing: content-box;
+  }
+
+  .TxFloatBlock.esShowCtrlName {
+    display: none !important;
+  }
+  &.esBarCtrlTurnOn .TxFloatBlock.esShowCtrlName {
+    display: inline-block !important;
+  }
+
+  .TxForceBlock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    @mixin scForceBlock() {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(51, 51, 51, 0.6);
+
+      &_title {
+        height: 2.3em;
+        line-height: 2.3em;
+        position: absolute;
+        top: 0;
+        left: 1em;
+        right: 50%;
+      }
+      &_close {
+        width: 2.3em;
+        height: 2.3em;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0.4em;
+
+        &::before {
+          width: 1.8em;
+          height: 1.8em;
+          margin: -0.9em;
+          display: block;
+          position: relative;
+          top: 50%;
+          left: 50%;
+        }
+      }
+    }
+
+
+    &_error {
+      @include scForceBlock();
+
+      &_content {
+        position: absolute;
+        top: 2.3em;
+        left: 1em;
+        right: 1em;
+        bottom: 2em;
+        line-height: 2em;
+        text-align: center;
+        overflow: auto;
+        overflow-wrap: break-word;
+
+        &::before {
+          content: '';
+          height: 99%;
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        * {
+          width: 99%;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+    &_warn {
+      @include scForceBlock();
+
+      &_close {
+        display: none;
+      }
+      &_content {
+        position: absolute;
+        top: 2.3em;
+        left: 1em;
+        right: 1em;
+        bottom: 2em;
+      }
+    }
+    &_showInf {
+      @include scForceBlock();
+
+      &_content {
+        position: absolute;
+        top: 2.3em;
+        left: 1em;
+        right: 1em;
+        bottom: 2em;
+      }
+    }
+  }
+}

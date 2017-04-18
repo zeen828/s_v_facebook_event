@@ -1,0 +1,25 @@
+<!DOCTYPE html><html>
+<head>
+
+    <meta charset="utf-8">
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="cyclicViewPly"></div>
+
+    <script>
+        function onReady_forVdolPly_cyclicView() {
+            getVdolPly_cyclicView( document.getElementById( 'cyclicViewPly' ), {
+                srcUrl: 'http://c.brightcove.com/services/mobile/streaming/index/rendition.m3u8?assetId=5131652189001',
+            } );
+        }
+    </script>
+    <script src="../lib/javascript/vdolPly_cyclicView_integration.js"></script>
+
+</body></html>

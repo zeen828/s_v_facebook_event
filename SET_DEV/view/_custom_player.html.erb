@@ -1,0 +1,191 @@
+<div id="LxBcvPly_wrap" style="display: none">
+
+<!-- 畫面 -->
+
+  <div class="TxCustPly"></div>
+
+  <div class="TxVideoSubstitute"></div>
+
+  <div class="TxTileOverlay">
+    <i class="TxTileOverlay_vidol"></i>
+    <div class="TxTileOverlay_watching">
+      <div class="TxTileOverlay_watching_live">
+        <span><%= t("player_icon.live") %></span>
+      </div>
+      <div class="TxTileOverlay_watching_num">
+        <span>0</span>
+      </div>
+    </div>
+    <div class="TxTileOverlay_flyMsg">
+      <div class="TxTileOverlay_flyMsg_show"></div>
+    </div>
+    <div class="TxTileOverlay_background">
+      <b class="TxTileOverlay_background_top"></b>
+      <b class="TxTileOverlay_background_bottom"></b>
+    </div>
+    <div class="TxTileOverlay_brightnessForTouch"></div>
+  </div>
+
+  <div class="TxBillboard">
+    <div class="TxBillboard_dfpBanner">
+      <div class="TxBillboard_dfpBanner_default"></div>
+      <div id="TxBillboard_dfpBanner_content" class="TxBillboard_dfpBanner_content"></div>
+      <b class="TxBillboard_dfpBanner_close"></b>
+    </div>
+  </div>
+
+  <div class="TxPlyerTimeLine">
+    <div class="TxPlyerTimeLine_floatShow">00:00</div>
+    <div class="TxPlyerTimeLine_buffer"></div>
+    <div class="TxPlyerTimeLine_play">
+      <b></b>
+    </div>
+    <div class="TxPlyerTimeLine_part"></div>
+  </div>
+
+  <div class="TxTouchCtrl">
+    <div class="TxTouchCtrl_left"></div>
+    <div class="TxTouchCtrl_center">
+      <i class="TxIcon_before TxIcon_play"></i>
+      <div class="TxTouchCtrl_center_adjust TxIcon">
+        <div class="TxTouchCtrl_center_adjustR">
+          <i class="TxIcon_adjustR TxIcon"></i>
+        </div>
+      </div>
+    </div>
+    <div class="TxTouchCtrl_right"></div>
+    <div class="TxTouchCtrl_infoState">
+      <i class="TxIcon_before TxIcon_live"></i>
+    </div>
+    <div class="TxTouchCtrl_topToolBar">
+      <i class="TxIcon TxIcon_episode"></i>
+    </div>
+    <div class="TxTouchCtrl_toolBar">
+      <i class="TxIcon_before TxIcon_flyMsg"></i>
+      <i class="TxIcon_before TxIcon_cyclicView"></i>
+      <i class="TxIcon TxIcon_caption"></i>
+      <i class="TxIcon_before TxIcon_collect"></i>
+      <i class="TxIcon_before TxIcon_full"></i>
+    </div>
+    <div class="TxTouchCtrl_timeLine"></div>
+  </div>
+
+  <div class="TxBarCtrl">
+    <i class="TxIcon_play TxIcon_before"></i>
+    <div class="TxBarCtrl_time">
+      <span class="TxBarCtrl_time_current">00:00</span>
+      <span class="TxBarCtrl_time_duration">00:00</span>
+    </div>
+    <b class="TxBarCtrl_space"></b>
+    <div class="TxBarCtrl_voice">
+      <div class="TxIcon_voice TxIcon" data-title="<%= t("player_icon.voice") %>">
+        <div class="TxBarCtrl_voiceR">
+          <i class="TxIcon_voiceR TxIcon"></i>
+        </div>
+      </div>
+      <div class="TxBarCtrl_voice_drawBar">
+        <div>
+          <b></b>
+        </div>
+      </div>
+    </div>
+    <i class="TxIcon_live TxIcon_before" data-title="<%= t("player_icon.live") %>"></i>
+    <i class="TxIcon_cyclicView TxIcon_before" data-title="<%= t("player_icon.cyclicView") %>"></i>
+    <i class="TxIcon_flyMsg TxIcon_before" data-title="<%= t("player_icon.flyMsg") %>"></i>
+    <i class="TxIcon_caption TxIcon_before" data-title="<%= t("player_icon.caption") %>"></i>
+    <i class="TxIcon_collect TxIcon_before" data-title="<%= t("player_icon.collect") %>"></i>
+    <i class="TxIcon_full TxIcon_before" data-title="<%= t("player_icon.full") %>"></i>
+  </div>
+
+  <div class="TxTopBar">
+    <div class="TxTopBar_title">
+      <span><%= @player_title %></span>
+    </div>
+    <div class="TxTopBar_otherBtnList">
+      <i class="TxIcon_tool TxIcon_before"></i>
+      <i class="TxIcon_episode TxIcon_before" data-title="<%= t("player_icon.video_list") %>"></i>
+    </div>
+  </div>
+
+  <div class="TxCtrlToolBar">
+    <i class="TxIcon_flyMsg TxIcon_before" data-title="<%= t("player_icon.flyMsg") %>"></i>
+    <i class="TxIcon_caption TxIcon_before" data-title="<%= t("player_icon.caption") %>"></i>
+    <i class="TxIcon_collect TxIcon_before" data-title="<%= t("player_icon.collect") %>"></i>
+    <i class="TxIcon_share TxIcon_before" data-title="<%= t("player_icon.share") %>"></i>
+  </div>
+
+
+<!-- 框框 -->
+
+  <div class="TxFloatBlock"></div>
+
+  <div class="TxForceBlock"></div>
+
+  <div class="TxForceBlock_error">
+    <div class="TxForceBlock_error_title"><%= t("player_block.error_title") %></div>
+    <b class="TxForceBlock_error_close TxIcon_X TxIcon_before"></b>
+    <div class="TxForceBlock_error_content"></div>
+  </div>
+
+  <div class="TxForceBlock_warn">
+    <div class="TxForceBlock_warn_title"></div>
+    <div class="TxForceBlock_warn_content"></div>
+  </div>
+
+  <div class="TxForceBlock_showInf">
+    <div class="TxForceBlock_showInf_title"></div>
+    <b class="TxForceBlock_showInf_close TxIcon_X TxIcon_before"></b>
+    <div class="TxForceBlock_showInf_content"></div>
+  </div>
+
+  <div class="TxForceBlock_interact"></div>
+
+
+<!-- 內容 -->
+
+<!--
+  <ul class="TxInform_share" data-title="<%= t("socail.title") %>">
+    <li class="TxIcon_ShareFB"><%= t("socail.facebook_share") %></li>
+    <li class="TxIcon_ShareTwitter"><%= t("socail.twitter_share") %></li>
+    <li class="TxIcon_ShareSina"><%= t("socail.sina_share") %></li>
+    <li class="TxIcon_ShareWeibo"><%= t("socail.weibo_share") %></li>
+    <li class="TxIcon_ShareLine"><%= t("socail.line_share") %></li>
+    <li class="TxIcon_ShareWechat"><%= t("socail.wechat_share") %></li>
+  </ul>
+ -->
+
+<!--
+  <div class="TxInform_episode" data-title="<%= t("player_icon.video_list") %>"></div>
+ -->
+
+  <div class="TxInform_unLogin" data-title="">
+    <div>
+      <span><%= t("device.un_login") %></span>
+      <button><%= t("device.un_login_goto") %></button>
+    </div>
+  </div>
+
+  <div class="TxInform_emailUnValidate" data-title="">
+    <%= t("device.email_validate") %>
+  </div>
+
+  <div class="TxInform_catchPlayRight" data-title="">
+    <div>
+      <p><%= t("device.current_watch") %></p>
+      <button><%= t("device.get_device") %></button>
+    </div>
+  </div>
+
+  <div class="TxInform_unBuyValidate" data-title="<%= t("player_block.unBuyValidate_title") %>">
+    <ul></ul>
+    <div><%= t("player_block.unBuyValidate_showMsg") %></div>
+  </div>
+
+  <div class="TxInform_recommendUseApp" data-title="">
+    <div>
+      <p><%= t("player_block.recommendUseApp_content") %></p>
+      <button><%= t("player_block.recommendUseApp_contentGetApp") %></button>
+    </div>
+  </div>
+
+</div>
